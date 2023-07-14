@@ -11,30 +11,31 @@ function fn(){
     var phoneinput = document.getElementById('pnum');
     
     // username validation
-
+    
+    
     
     
     let pattern = /^[A-Z][a-z]*[!@#$%^&*]?(\d{1,4}|[a-z]*)$/;
     if(name==''){
         valid=false;
-        var com= document.getElementById('name');
-        com.innerHTML="*please enter the name";
+         errors= document.getElementById('name');
+        errors.innerHTML="*please enter the name";
         nameinput.classList.add('is-invalid');
         nameinput.classList.remove('is-valid');
     
 
     } else if (name.length < 3){
         valid=false;
-        var com= document.getElementById('name');
-        com.innerHTML="*please enter more than 3 characters";
+      errors= document.getElementById('name');
+        errors.innerHTML="*please enter more than 3 characters";
         nameinput.classList.add('is-invalid');
         nameinput.classList.remove('is-valid');        
     }
     
     else if (!pattern.test(name)){
         valid=false;
-        var com= document.getElementById('name');
-        com.innerHTML="*Name should start with capital letter";
+        errors= document.getElementById('name');
+        errors.innerHTML="*Name should start with capital letter";
         nameinput.classList.add('is-invalid');
         nameinput.classList.remove('is-valid');        
         
@@ -53,13 +54,13 @@ function fn(){
 
     if(email==''){
         valid=false;
-        var com= document.getElementById('email');
-        com.innerHTML="*please enter the mailid";
+        errors= document.getElementById('email');
+        errors.innerHTML="*please enter the mailid";
         emailinput.classList.add('is-invalid');
     }else if(!emailPattern.test(email)){
         valid=false;
-        var com= document.getElementById('email');
-        com.innerHTML="*please enter the valid mail";
+        errors= document.getElementById('email');
+        errors.innerHTML="*please enter the valid mail";
         emailinput.classList.add('is-invalid');    
     }    
     else{
@@ -77,8 +78,8 @@ function fn(){
   
   if(date == null || date== ''){ 
       valid = false;
-      var com= document.getElementById('dateOfBirthrErr');
-      com.innerHTML="*please enter the date of birth"
+      errors= document.getElementById('dateOfBirthrErr');
+      errors.innerHTML="*please enter the date of birth"
       dateinput.classList.add('is-invalid');
       
   }
@@ -98,29 +99,29 @@ function fn(){
 
     if(phone== ''){
         valid=false;
-        var com = document.getElementById('phone');
-        com.innerHTML="*please enter the digits";
+        errors = document.getElementById('phone');
+        errors.innerHTML="*please enter the digits";
         phoneinput.classList.add('is-invalid');
 
     
     }else if(phone.length > 10){
         valid=false;
-        var com = document.getElementById('phone');
-        com.innerHTML="*please enter the 10 digits";
+        errors = document.getElementById('phone');
+        errors.innerHTML="*please enter the 10 digits";
         phoneinput.classList.add('is-invalid');
 
     }else if (phone.length < 10){
         valid=false;
-        var com = document.getElementById('phone');
-        com.innerHTML="*please enter the 10 digits";
+        errors= document.getElementById('phone');
+        errors.innerHTML="*please enter the 10 digits";
         phoneinput.classList.add('is-invalid');
        
       
      }
      else if(!pattern1.test(phone)){
         valid=false;
-        var com = document.getElementById('phone');
-        com.innerHTML="*First Number should be 6,7,8,9";
+        errors= document.getElementById('phone');
+        errors.innerHTML="*First Number should be 6,7,8,9";
         phoneinput.classList.add('is-invalid');
        
       
@@ -148,8 +149,8 @@ var inputother = document.getElementById('gridRadios3');
 
 if(male.checked == false && female.checked== false && other.checked==false){
     valid= false;
-     var com = document.getElementById('genderError');
-     com.innerHTML="*please select the gender";
+    errors = document.getElementById('genderError');
+    errors.innerHTML="*please select the gender";
      inputmale.classList.add('is-invalid');
      inputfemale.classList.add('is-invalid');
      inputother.classList.add('is-invalid');
@@ -195,8 +196,8 @@ var inputdrop =document.getElementById('inlineFormSelectPref');
 if(drop == "Choose your place"){
 
     valid=false;
-    var com = document.getElementById('droperror');
-    com.innerHTML="*please choose your the place";
+    errors = document.getElementById('droperror');
+    errors.innerHTML="*please choose your the place";
     inputdrop.classList.add('is-invalid');
 }else{
    
@@ -215,8 +216,8 @@ const check= document.getElementById('defaultCheck1');
 if(check.checked == false){
     console.log(check.checked,"jbcjbsjcbs")
     valid=false;
-    var com = document.getElementById('checkerror');
-    com.innerHTML="*Please Tick The Box To Agree The Policy ";
+    errors = document.getElementById('checkerror');
+    errors.innerHTML="*Please Tick The Box To Agree The Policy ";
 
 }if(check.checked == true){
     console.log(check.checked,"jbcjbsjcbs")
@@ -224,6 +225,10 @@ if(check.checked == false){
     document.getElementById('checkerror').innerHTML="";
     
 }
+
+
+
+
 
 
 // success notification
@@ -271,8 +276,7 @@ if(check.checked == false){
  }
 
 
-    
-}
+}   
 
 
 
